@@ -1,14 +1,8 @@
-package com.example.blog.Entities;
+package com.example.blog.Payloads;
 
-import javax.persistence.*;
+public class RoleDto {
 
-@Entity
-@Table(name = "roles")
-public class Role {
-
-    @Id
     private int id;
-
     private String name;
 
     public int getId() {

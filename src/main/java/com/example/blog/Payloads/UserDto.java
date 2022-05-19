@@ -1,9 +1,13 @@
 package com.example.blog.Payloads;
 
+import com.example.blog.Entities.Role;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 public class UserDto {
 
@@ -14,10 +18,19 @@ public class UserDto {
     @Email(message = "email not valid")
     private String email;
     @NotEmpty
-    @Size(min = 5, max = 15, message = "password length must be between 5 to 15 including spaces")
     private String password;
     @NotEmpty
     private String about;
+
+    private Set<RoleDto> roles = new HashSet<>();
+
+    public Set<RoleDto> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<RoleDto> roles) {
+        this.roles = roles;
+    }
 
     public int getId() {
         return id;
